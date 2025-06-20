@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>Blog de Creación de Videojuegos</title>
+    <style>
+        body {
+            font-family: 'Segoe UI', sans-serif;
+            background-color: #f4f4f4;
+            color: #333;
+            margin: 0;
+            padding: 0;
+        }
+
+        header {
+            background-color: #2d3436;
+            color: white;
+            padding: 30px 20px;
+            text-align: center;
+        }
+
+        header h1 {
+            margin: 0;
+            font-size: 36px;
+        }
+
+        .container {
+            max-width: 900px;
+            margin: 20px auto;
+            padding: 20px;
+            background: white;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0,0,0,0.1);
+        }
+
+        .post {
+            margin-bottom: 30px;
+        }
+
+        .post h2 {
+            color: #0984e3;
+        }
+
+        .post p {
+            line-height: 1.6;
+        }
+
+        footer {
+            text-align: center;
+            padding: 20px;
+            background-color: #dfe6e9;
+            margin-top: 40px;
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <h1>Blog de Desarrollo de Videojuegos 3D</h1>
+        <p>Guía paso a paso para crear tu propio juego en PC y móvil con Unity</p>
+    </header>
+
+    <div class="container">
+
+        <div class="post">
+            <h2>1. Configura tu Proyecto en Unity</h2>
+            <p>Abre Unity Hub y crea un nuevo proyecto 3D. Asegúrate de agregar soporte para PC y Android. Añade un plano como terreno y una cápsula como jugador. Guarda tu escena como <strong>MainScene</strong>.</p>
+        </div>
+
+        <div class="post">
+            <h2>2. Control del Jugador</h2>
+            <p>Crea un script llamado <code>PlayerController</code> que use <code>Input.GetAxis</code> para moverse y <code>Input.GetButtonDown("Jump")</code> para saltar. Así puedes controlar al jugador con teclado o botones móviles.</p>
+        </div>
+
+        <div class="post">
+            <h2>3. Enemigos con IA</h2>
+            <p>Usa <code>NavMeshAgent</code> para que los enemigos sigan al jugador. Crea un script <code>EnemyAI</code> que controle su movimiento y ataques.</p>
+        </div>
+
+        <div class="post">
+            <h2>4. Misiones y Cinemáticas</h2>
+            <p>Agrega misiones que se activen con triggers. Usa Timeline y Playable Director para crear cinemáticas tipo historia.</p>
+        </div>
+
+        <div class="post">
+            <h2>5. Sistema de Monedas y Tienda</h2>
+            <p>Agrega monedas como esferas y permite que el jugador las recoja. Muestra el total en un <code>Canvas</code> y diseña una tienda donde pueda gastar esas monedas.</p>
+        </div>
+
+        <div class="post">
+            <h2>6. Interfaces y Menús</h2>
+            <p>Crea un menú principal, HUD y menú de pausa con botones y textos. Usa el sistema UI de Unity y un script <code>MenuController</code>.</p>
+        </div>
+
+        <div class="post">
+            <h2>7. Publica tu Juego</h2>
+            <p>Para Android, compila el juego como AAB y súbelo a Google Play. Para PC, crea un build para Steam y usa Steamworks.NET para logros, multijugador y más.</p>
+        </div>
+
+    </div>
+
+    <footer>
+        <p>© 2025 Blog de Videojuegos 3D - Creado por [Tu Nombre]</p>
+    </footer>
+
+</body>
+</html>
