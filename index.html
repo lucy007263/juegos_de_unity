@@ -1,116 +1,105 @@
-<!DOCTYPE html>
-<html lang="es">
+<!DOCTYPE html><html lang="es">
 <head>
   <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta name="google-site-verification" content="HOfXEBwInXmjuPxSxx2j0jXyP69GyJ5n-gLmTGhvbpw" />
-  <title>Blog de Videojuegos 3D</title>
-  <meta name="description" content="Guía paso a paso para crear videojuegos 3D con Unity para PC y Android. Aprende a programar, diseñar y publicar tu propio juego.">
+  <title>Técnica de Sistemas Teleinformáticos</title>
+  <meta name="description" content="Blog del grupo Técnica de Sistemas Teleinformáticos. Aprende a crear videojuegos con Unity para PC y Android.">
+  <link rel="icon" href="https://cdn-icons-png.flaticon.com/512/2721/2721296.png" type="image/png">
   <style>
     body {
+      margin: 0;
       font-family: 'Segoe UI', sans-serif;
-      background-color: #f5f6fa;
-      color: #2f3640;
-      margin: 0;
-      padding: 0;
-    }
+      background-color: #1e1e2f;
+      color: #eeeeee;
+    }header {
+  background-color: #00adb5;
+  padding: 30px;
+  text-align: center;
+}
 
-    header {
-      background-color: #273c75;
-      color: white;
-      padding: 40px 20px;
-      text-align: center;
-    }
+header h1 {
+  margin: 0;
+  font-size: 36px;
+}
 
-    header h1 {
-      font-size: 36px;
-      margin: 0;
-    }
+nav {
+  background-color: #222;
+  padding: 10px 0;
+  text-align: center;
+}
 
-    header p {
-      margin-top: 10px;
-      font-size: 18px;
-    }
+nav a {
+  color: #eeeeee;
+  text-decoration: none;
+  margin: 0 15px;
+  font-weight: bold;
+}
 
-    .container {
-      max-width: 900px;
-      margin: 30px auto;
-      padding: 20px;
-      background: white;
-      border-radius: 10px;
-      box-shadow: 0 0 10px rgba(0,0,0,0.1);
-    }
+nav a:hover {
+  color: #00adb5;
+}
 
-    .post {
-      margin-bottom: 40px;
-    }
+.container {
+  max-width: 900px;
+  margin: 30px auto;
+  padding: 20px;
+  background-color: #2e2e3a;
+  border-radius: 10px;
+}
 
-    .post h2 {
-      color: #0097e6;
-      font-size: 24px;
-    }
+.section {
+  margin-bottom: 40px;
+}
 
-    .post img {
-      width: 100%;
-      border-radius: 10px;
-      margin-top: 10px;
-    }
+.section h2 {
+  color: #00adb5;
+  font-size: 24px;
+}
 
-    .post p {
-      line-height: 1.6;
-    }
+.section img {
+  width: 100%;
+  border-radius: 10px;
+  margin-top: 10px;
+}
 
-    footer {
-      text-align: center;
-      padding: 20px;
-      background-color: #dcdde1;
-      margin-top: 40px;
-    }
+footer {
+  text-align: center;
+  padding: 20px;
+  background-color: #111;
+  color: #888;
+  margin-top: 50px;
+}
+
   </style>
 </head>
 <body>
-
   <header>
-    <h1>🎮 Blog de Creación de Videojuegos 3D</h1>
-    <p>Aprende a diseñar y programar tu propio juego con Unity</p>
-  </header>
+    <h1>💻 Técnica de Sistemas Teleinformáticos</h1>
+    <p>Blog educativo sobre creación de videojuegos en Unity</p>
+  </header>  <nav>
+    <a href="#inicio">Inicio</a>
+    <a href="#proyecto">Proyecto</a>
+    <a href="#contacto">Contacto</a>
+  </nav>  <div class="container">
+    <div class="section" id="inicio">
+      <h2>👾 Bienvenid@ al Blog</h2>
+      <p>Este sitio fue creado por el grupo Técnica de Sistemas Teleinformáticos como guía para aprender a desarrollar videojuegos 3D usando Unity para PC y Android.</p>
+      <img src="https://cdn.pixabay.com/photo/2016/12/07/09/17/technology-1885482_1280.jpg" alt="Imagen de fondo informática">
+    </div><div class="section" id="proyecto">
+  <h2>🎮 Proyecto: Videojuegos con Unity</h2>
+  <p>Aprenderás a crear un proyecto en Unity, programar el movimiento de un personaje, agregar enemigos, sistema de monedas, y publicar en Google Play o Steam.</p>
+  <img src="https://cdn.mos.cms.futurecdn.net/EQoVhtadzy5uAhE6AKxxz5.jpg" alt="Interfaz de Unity">
+</div>
 
-  <div class="container">
+<div class="section" id="contacto">
+  <h2>📞 Contacto</h2>
+  <p>Para más información, contacta al grupo o al profesor responsable.</p>
+  <img src="https://cdn-icons-png.flaticon.com/512/597/597177.png" alt="Contacto">
+</div>
 
-    <div class="post">
-      <h2>⚙️ 1. Configura tu Proyecto en Unity</h2>
-      <p>Desde Unity Hub, crea un nuevo proyecto en 3D y configura soporte para PC y Android.</p>
-      <img src="https://cdn.mos.cms.futurecdn.net/EQoVhtadzy5uAhE6AKxxz5.jpg" alt="Unity Hub">
-    </div>
-
-    <div class="post">
-      <h2>🕹️ 2. Control del Jugador</h2>
-      <p>Programa un script <code>PlayerController</code> para mover y saltar usando el teclado o botones móviles.</p>
-      <img src="https://gamedevacademy.org/wp-content/uploads/2019/10/playercontroller-script.png" alt="Script del jugador">
-    </div>
-
-    <div class="post">
-      <h2>👾 3. Agrega Enemigos</h2>
-      <p>Crea enemigos con IA usando <code>NavMeshAgent</code> para que sigan al jugador automáticamente.</p>
-      <img src="https://docs.unity3d.com/uploads/Main/NavigationBake1.jpg" alt="IA y navegación en Unity">
-    </div>
-
-    <div class="post">
-      <h2>💰 4. Sistema de Monedas y Tienda</h2>
-      <p>Haz que el jugador recoja monedas y las use en una tienda para mejorar habilidades o comprar objetos.</p>
-      <img src="https://cdn.gamedeveloper.com/image/upload/c_fill,f_auto,fl_lossy,q_auto,w_760/v1/article-featured/2023/03/95228-ui_shop_full_2d.png" alt="Tienda del juego">
-    </div>
-
-    <div class="post">
-      <h2>📱 5. Publica tu Juego</h2>
-      <p>Genera un archivo .AAB para Android y súbelo a Google Play. También puedes lanzar tu juego en Steam con Steamworks.NET.</p>
-      <img src="https://miro.medium.com/v2/resize:fit:1400/format:webp/1*wglUbRkE0ifP28kqx5JjZw.png" alt="Publicar en Google Play">
-    </div>
-
-  </div>
-
-  <footer>
-    <p>© 2025 Blog de Videojuegos 3D - Hecho con 💙 por Lucy</p>
+  </div>  <footer>
+    <p>© 2025 Técnica de Sistemas Teleinformáticos. Todos los derechos reservados.</p>
   </footer>
-
 </body>
 </html>
