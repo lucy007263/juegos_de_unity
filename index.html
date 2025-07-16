@@ -1,213 +1,186 @@
-<!DOCTYPE html>
-<html lang="es">
+<!DOCTYPE html><html lang="es">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Técnica de Sistemas Teleinformáticos</title>
-  <meta name="description" content="Blog del grupo Técnica de Sistemas Teleinformáticos. Aprende a crear videojuegos con Unity para PC y Android." />
-  <link rel="icon" href="https://cdn-icons-png.flaticon.com/512/2721/2721296.png" type="image/png" />
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Blog Unity 3D - Técnica de Sistemas</title>
+  <link rel="icon" href="https://cdn-icons-png.flaticon.com/512/2721/2721296.png" type="image/png">
+  <link href="https://fonts.googleapis.com/css2?family=Roboto&display=swap" rel="stylesheet">
   <style>
-    * {
-      box-sizing: border-box;
-    }
-
     body {
+      font-family: 'Roboto', sans-serif;
       margin: 0;
-      font-family: 'Segoe UI', sans-serif;
-      background-color: #1e1e2f;
-      color: #eeeeee;
+      padding: 0;
+      background-color: #f0f4f8;
     }
-
-    header {
-      background-color: #00adb5;
-      padding: 30px 20px;
-      text-align: center;
-    }
-
-    header h1 {
-      margin: 0;
-      font-size: 32px;
-    }
-
     nav {
       background-color: #222;
-    }
-
-    .nav-links {
-      display: flex;
-      justify-content: center;
-      flex-wrap: wrap;
-      padding: 10px 0;
-      list-style: none;
-      margin: 0;
-    }
-
-    .nav-links a {
-      color: #eeeeee;
-      text-decoration: none;
-      margin: 0 15px;
-      font-weight: bold;
-    }
-
-    .nav-links a:hover {
-      color: #00adb5;
-    }
-
-    .hamburger {
-      display: none;
-      background-color: #222;
+      color: white;
       padding: 10px;
+    }
+    .hamburger {
+      font-size: 20px;
       cursor: pointer;
-      text-align: center;
-      font-size: 22px;
+      display: block;
     }
-
+    .nav-links {
+      display: none;
+      flex-direction: column;
+    }
+    .nav-links.active {
+      display: flex;
+    }
+    .nav-links a {
+      color: white;
+      text-decoration: none;
+      padding: 5px 0;
+    }
+    @media (min-width: 768px) {
+      .hamburger {
+        display: none;
+      }
+      .nav-links {
+        display: flex !important;
+        flex-direction: row;
+        gap: 20px;
+      }
+    }
     .container {
-      max-width: 900px;
-      margin: 30px auto;
       padding: 20px;
-      background-color: #2e2e3a;
-      border-radius: 10px;
     }
-
     .section {
-      margin-bottom: 40px;
+      background: white;
+      margin-bottom: 30px;
+      padding: 20px;
+      border-radius: 12px;
+      box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
     }
-
-    .section h2 {
-      color: #00adb5;
-      font-size: 24px;
-    }
-
     .section img {
       width: 100%;
-      border-radius: 10px;
+      border-radius: 8px;
       margin-top: 10px;
     }
-
+    footer {
+      background-color: #222;
+      color: white;
+      text-align: center;
+      padding: 15px 0;
+    }
     .gallery img {
       width: 100%;
-      max-height: 250px;
-      object-fit: cover;
-      margin-bottom: 10px;
+      max-width: 300px;
+      margin: 10px;
+      border-radius: 8px;
     }
-
-    .testimonial {
-      background-color: #1e1e2f;
-      border-left: 4px solid #00adb5;
-      padding: 15px;
-      margin-top: 15px;
-    }
-
-    .contact-info p {
-      margin: 5px 0;
-    }
-
-    footer {
-      text-align: center;
-      padding: 20px;
-      background-color: #111;
-      color: #888;
-      margin-top: 50px;
-    }
-
-    /* Responsive */
-    @media (max-width: 768px) {
-      .nav-links {
-        display: none;
-        flex-direction: column;
-        text-align: center;
-      }
-
-      .nav-links.active {
-        display: flex;
-      }
-
-      .hamburger {
-        display: block;
-      }
+    button.to-top {
+      position: fixed;
+      bottom: 20px;
+      right: 20px;
+      padding: 10px 15px;
+      border: none;
+      background-color: #222;
+      color: white;
+      cursor: pointer;
+      border-radius: 50%;
+      font-size: 20px;
     }
   </style>
 </head>
 <body>
-
-  <header>
-    <h1>💻 Técnica de Sistemas Teleinformáticos</h1>
-    <p>Blog educativo sobre creación de videojuegos en Unity</p>
-  </header>
-
   <div class="hamburger" onclick="toggleMenu()">☰ Menú</div>
   <nav>
     <div class="nav-links" id="menu">
       <a href="#inicio">Inicio</a>
-      <a href="#proyecto">Proyecto</a>
-      <a href="#que-es-unity">¿Qué es Unity?</a>
+      <a href="#guia">Guía</a>
+      <a href="#comandos">Comandos</a>
       <a href="#galeria">Galería</a>
       <a href="#testimonios">Testimonios</a>
+      <a href="#recursos">Recursos</a>
       <a href="#contacto">Contacto</a>
     </div>
-  </nav>
-
-  <div class="container">
-
+  </nav>  <main class="container">
     <div class="section" id="inicio">
       <h2>👾 Bienvenid@ al Blog</h2>
       <p>Este sitio fue creado por el grupo Técnica de Sistemas Teleinformáticos como guía para aprender a desarrollar videojuegos 3D usando Unity para PC y Android.</p>
-      <img src="https://cdn.pixabay.com/photo/2016/12/07/09/17/technology-1885482_1280.jpg" alt="Imagen de fondo informática" />
-    </div>
+    </div><div class="section" id="guia">
+  <h2>🛠️ Guía paso a paso</h2>
+  <ol>
+    <li><strong>Crear y configurar el proyecto:</strong> Unity 3D, escena, terreno y cámara.</li>
+    <li><strong>Programar al jugador:</strong> Movimiento y salto para PC y móvil.</li>
+    <li><strong>Agregar enemigos:</strong> NavMeshAgent y comportamiento básico.</li>
+    <li><strong>Misiones y cinemáticas:</strong> Usar Timeline.</li>
+    <li><strong>Sistema de monedas y tienda:</strong> Objetos coleccionables y sistema de compra.</li>
+    <li><strong>Interfaces y menús:</strong> HUD, menú de pausa y botones.</li>
+    <li><strong>Publicar en Google Play:</strong> Crear APK/AAB y subirlo.</li>
+    <li><strong>Publicar en Steam:</strong> Usar Steamworks y SteamPipe.</li>
+    <li><strong>Integrar Steamworks.NET:</strong> Logros y lobby.</li>
+    <li><strong>Automatizar publicación:</strong> Script upload con SteamCMD.</li>
+  </ol>
+</div>
 
-    <div class="section" id="proyecto">
-      <h2>🎮 Proyecto: Videojuegos con Unity</h2>
-      <p>Aprenderás a crear un proyecto en Unity, programar el movimiento de un personaje, agregar enemigos, sistema de monedas, y publicar en Google Play o Steam.</p>
-      <img src="https://cdn.mos.cms.futurecdn.net/EQoVhtadzy5uAhE6AKxxz5.jpg" alt="Interfaz de Unity" />
-    </div>
+<div class="section" id="comandos">
+  <h2>⌨️ Comandos útiles de Unity</h2>
+  <ul>
+    <li><strong>Unity Hub > New Project > 3D Template:</strong> Inicia tu proyecto 3D.</li>
+    <li><strong>Assets > Create > C# Script:</strong> Crear scripts para el juego.</li>
+    <li><strong>GameObject > 3D Object:</strong> Agrega terreno, monedas, enemigos.</li>
+    <li><strong>UI > Canvas:</strong> Diseña la interfaz gráfica.</li>
+    <li><strong>Window > Sequencing > Timeline:</strong> Crea cinemáticas.</li>
+  </ul>
+</div>
 
-    <div class="section" id="que-es-unity">
-      <h2>🧠 ¿Qué es Unity?</h2>
-      <p>Unity es una plataforma de desarrollo en tiempo real usada por millones de desarrolladores para crear videojuegos, simulaciones, aplicaciones de realidad virtual, y mucho más. Es potente, multiplataforma y gratuita para principiantes.</p>
-      <img src="https://cdn-icons-png.flaticon.com/512/226/226777.png" alt="Logo Unity" />
-    </div>
-
-    <div class="section" id="galeria">
-      <h2>🖼️ Galería de Proyectos</h2>
-      <div class="gallery">
-        <img src="https://cdn.pixabay.com/photo/2020/04/14/20/19/game-5048564_960_720.jpg" alt="Videojuego 1" />
-        <img src="https://cdn.pixabay.com/photo/2017/01/11/01/48/game-1979578_960_720.jpg" alt="Videojuego 2" />
-      </div>
-    </div>
-
-    <div class="section" id="testimonios">
-      <h2>🗣️ Testimonios</h2>
-      <div class="testimonial">
-        <p><strong>Estudiante 1:</strong> “Gracias a este proyecto ahora entiendo cómo funcionan los videojuegos. Me encantó trabajar con Unity.”</p>
-      </div>
-      <div class="testimonial">
-        <p><strong>Estudiante 2:</strong> “Aprender programación mientras diseño juegos ha sido increíble. ¡Recomiendo esta técnica!”</p>
-      </div>
-    </div>
-
-    <div class="section" id="contacto">
-      <h2>📞 Contacto</h2>
-      <p>Para más información, contacta al grupo o al profesor responsable.</p>
-      <img src="https://cdn-icons-png.flaticon.com/512/597/597177.png" alt="Contacto" />
-      <div class="contact-info">
-        <p><strong>Email:</strong> sistemas.teleinfo@colegio.edu.co</p>
-        <p><strong>Instagram:</strong> @teleinfo_grupo</p>
-        <p><strong>Profesor:</strong> Ing. Javier Rodríguez</p>
-      </div>
-    </div>
-
+<div class="section" id="galeria">
+  <h2>🖼️ Galería de Proyectos</h2>
+  <div class="gallery">
+    <img https://images.app.goo.gl/YBSFnfDH3WTPiqy88" alt="">
   </div>
+</div>
 
-  <footer>
+<div class="section" id="testimonios">
+  <h2>🗣️ Testimonios</h2>
+  <div class="testimonial">
+    <p><strong>Estudiante 1:</strong> “Gracias a este proyecto ahora entiendo cómo funcionan los videojuegos. Me encantó trabajar con Unity.”</p>
+  </div>
+  <div class="testimonial">
+    <p><strong>Estudiante 2:</strong> “Aprender programación mientras diseño juegos ha sido increíble. ¡Recomiendo esta técnica!”</p>
+  </div>
+  <div class="testimonial">
+    <p><strong>Estudiante 3:</strong> “Cuando aprendí a integrar logros en Steam con Steamworks.NET, sentí que mi juego era profesional.”</p>
+  </div>
+  <div class="testimonial">
+    <p><strong>Estudiante 4:</strong> “Crear mi primer APK y subirlo a Google Play fue lo más emocionante del proyecto.”</p>
+  </div>
+</div>
+
+<div class="section" id="recursos">
+  <h2>🌐 Recursos recomendados</h2>
+  <ul>
+    <li><a href="https://unity.com" target="_blank">Unity Oficial</a></li>
+    <li><a href="https://partner.steamgames.com/" target="_blank">Steamworks para desarrolladores</a></li>
+    <li><a href="https://play.google.com/console" target="_blank">Google Play Console</a></li>
+    <li><a href="https://github.com/rlabrecque/Steamworks.NET" target="_blank">Steamworks.NET en GitHub</a></li>
+  </ul>
+</div>
+
+<div class="section" id="contacto">
+  <h2>📞 Contacto</h2>
+  <p>Para más información, contacta al grupo o al profesor responsable.</p>
+  <div class="contact-info">
+    <p><strong>Email:</strong> sistemas.teleinfo@colegio.edu.co</p>
+    <p><strong>Instagram:</strong> @teleinfo_grupo</p>
+    <p><strong>Profesor:</strong> Ing. Javier Rodríguez</p>
+  </div>
+</div>
+
+  </main>  <footer>
     <p>© 2025 Técnica de Sistemas Teleinformáticos. Todos los derechos reservados.</p>
-  </footer>
+  </footer><button class="to-top" onclick="window.scrollTo({ top: 0, behavior: 'smooth' })">↑</button>
 
   <script>
     function toggleMenu() {
       const menu = document.getElementById("menu");
-      menu.classList.toggle("active");
+      if (menu) {
+        menu.classList.toggle("active");
+      }
     }
-  </script>
-</body>
+  </script></body>
 </html>
